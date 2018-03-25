@@ -1,0 +1,31 @@
+{
+  "name": "js",
+  "version": "0.0.1",
+  "dependencies": {
+    "path": "^0.12.7",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-compass":"^2.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-htmlmin": "^4.0.0",
+    "normalize-sass": "^1.0.0",
+    "font-awesome": "^4.7.0",
+    "gulp-server-livereload":"^1.9.2"
+  },
+  "scripts": {
+    "build-js": "gulp build-js",
+    "build-css": "gulp build-css",
+    "copy": "gulp copy",
+    "watch": "gulp watch",
+    "build": "gulp build",
+    "prod": "gulp dist-server",
+    "dev": "gulp dev-server"
+
+  },
+  "devDependencies": {
+    "compass-mixins": "^0.12.10",
+    "bootstrap": "^4.0.0"
+  }
+}

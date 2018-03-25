@@ -1,0 +1,31 @@
+// Defaults
+$font-icon-size: 16px !default;
+$font-icon-small-size: 9px !default;
+$font-icon-large-size: 30px !default;
+
+// Awesome Icons
+$font-icon-awesome-name : "Awesome Icons" !default;
+$font-icon-awesome-file : "fontawesome-webfont" !default;
+$font-icon-awesome-define : "Awesome Icons", "Helvetica Neue", Arial, sans-serif !default;
+
+
+@include font-face(
+	$font-icon-awesome-name,
+	font-files("#{$font-icon-awesome-file}.ttf", "#{$font-icon-awesome-file}.svg", "#{$font-icon-awesome-file}.woff"), "#{$font-icon-awesome-file}.eot");
+
+[class^="fa-"], [class*=" fa-"] {
+	position: relative;
+	display: inline-block;
+	font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} $font-icon-awesome-define; // shortening font declaration
+	font-size: inherit; // can't have font-size inherit on line above, so need to override
+	text-rendering: auto; // optimizelegibility throws things off #1094
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&:before {
+		content: "\e033";
+	}
+}
+
+
+@import "../../../node_modules/font-awesome/scss/icons";

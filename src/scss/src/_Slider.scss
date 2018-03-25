@@ -1,0 +1,60 @@
+/// @member Docler.SettingsBoard
+//
+// Resoltion sliders
+
+$slider-tracer-border-color: rgba(26,26,26,.425) !default;
+$slider-tracer-backgound-color: rgba(51,51,51,.3) !default;
+
+$slider-size: 20px !default;
+$slider-border-radius: 50% !default;
+
+$slider-button-background-color: rgba(#eee, .7) !default;
+
+.slider {
+	width: 50%;
+
+	.tracer {
+		border: 1px solid $slider-tracer-border-color;
+		border-radius: 3px;
+		background-color: $slider-tracer-backgound-color;
+		height: 2px;
+		line-height: 10px;
+		margin-top: 6px;
+	}
+
+	.tracer-button {
+		border: 1px solid #333;
+		border-radius: $slider-border-radius;
+		margin-top: -10px;
+		width: $slider-size;
+		height: $slider-size;
+		background-color: $slider-button-background-color;
+		display: block;
+	}
+
+	.tooltip {
+		margin: 20px auto 0 auto;
+		@include display-flex();
+		@include flex-direction(row);
+
+		@include xs() {
+			@include flex-direction(column);
+			br {display: none; }
+			.textfield {margin-top: 3px;}
+		}
+
+		@include sm() {
+			@include flex-direction(column);
+			br {display: none; }
+			.textfield {margin-top: 3px;}
+		}
+
+		text-align: center;
+
+		.textfield {
+			@include flex(1);
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+	}
+}

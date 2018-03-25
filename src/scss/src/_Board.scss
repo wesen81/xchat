@@ -1,0 +1,21 @@
+/// @member Docler.Tab
+//
+//
+
+.board {
+	@include flex(1);
+	@include display-flex();
+	width: auto;
+	margin: 10px;
+
+	.page {
+		@include flex(1);
+		padding: 10px;
+		background: $app-background;
+		border-radius: 5px;
+
+		&:not(.active) {
+			display: none !important;
+		}
+	}
+}

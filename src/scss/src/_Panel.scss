@@ -1,0 +1,81 @@
+/// @member Docler.SetterBoard
+//
+// Accordion panel
+
+$panel-background-color: #4E545A;
+$panel-margin-bottom: 10px;
+$panel-text-color: #d2d2d2;
+$panel-padding: 15px;
+
+$panel-header-font-size: 1.5rem;
+
+$panel-body-border-color: rgba(51,51,51,0.3);
+
+.panel {
+
+	background: #4E545A;
+	border-radius: 2px;
+
+	color: $panel-text-color;
+
+	&:not(:last-child) {
+		margin-bottom: $panel-margin-bottom;
+	}
+
+
+	&:not(:last-child) {
+		margin-bottom: $panel-margin-bottom;
+	}
+
+	.panel-header {
+
+		padding: 8px $panel-padding;
+		font-size: $panel-header-font-size;
+		cursor : pointer;
+
+		&:after {
+			box-sizing: border-box;
+			display: inline-block;
+			font-family: "Awesome Icons";
+			content: $fa-var-angle-left;
+			float: right;
+			//margin-right: -8px;
+			position: relative;
+			top: 1px;
+			@include single-transition(transform 0.1s ease-in-out 0);
+		}
+
+		&:hover {
+			color: lighten($panel-text-color, 10%);
+		}
+
+	}
+
+	.panel-body {
+		border-top: 1px solid $panel-body-border-color;
+		height: 0;
+		overflow: hidden;
+		@include single-transition(height 0.1s ease-in-out);
+
+	}
+
+	.panel-wrapper {
+		padding: $panel-padding;
+		@include display-flex();
+	}
+
+	&.collapse {
+		.panel-header:after {
+			@include rotate(-90deg);
+			color: darken($panel-text-color, 20%);
+		}
+
+		.panel-body {
+			@include single-transition(height 0.1s ease-in-out);
+			height: auto;
+		}
+	}
+
+
+
+}

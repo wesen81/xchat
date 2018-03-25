@@ -1,0 +1,23 @@
+/// @memeber Docler.SettingsBoard
+//
+// User can modify the application settings
+
+#settings {
+
+	overflow-x: auto;
+
+	.panel-wrapper{
+		@include flex-direction(column);
+	}
+
+	.textfield {
+		width: auto;
+		@include flex(1);
+	}
+
+	.slider {
+		margin: 10px auto;
+
+	}
+
+}

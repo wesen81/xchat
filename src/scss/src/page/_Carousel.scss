@@ -1,0 +1,107 @@
+/// @member Docler.Carousel
+//
+// User can see the pictures from gallery
+
+$carousel-body-background: black !default;
+$carousel-body-border-radius: 5px !default;
+$carousel-control-background: rgba(white, .1) !default;
+$carousel-control-icon-background: rgba(white, .2) !default;
+$carousel-control-icon-color: black !default;
+$carousel-control-icon-color-hover: $base-red !default;
+
+$carousel-loader-color: whitesmoke !default;
+
+
+#carousel {
+	position: relative;
+	@include flex(1);
+	@include display-flex();
+	overflow: hidden;
+
+	.carousel-body {
+		@include display-flex();
+		@include flex(1);
+		@include flex-direction(row);
+		overflow: hidden;
+		background: $carousel-body-background;
+		border-radius: $carousel-body-border-radius;
+	}
+
+	.carousel-item {
+		margin: auto;
+
+		&:not(.active) {
+			display: none;
+		}
+
+		img {
+			display: block;
+		}
+	}
+
+	.carousel-control {
+		@include display-flex();
+		position: absolute;
+		background: $carousel-control-background;
+		top: 10px;
+		bottom: 10px;
+		width: 10%;
+		vertical-align: middle;
+		overflow: hidden;
+		cursor: pointer;
+
+		.carousel-icon {
+			@include flex(1);
+			background: $carousel-control-icon-background;
+			color: $carousel-control-icon-color;
+			margin: auto;
+			font-size: 3em;
+			text-align: center;
+			height: auto;
+		}
+
+		&:hover{
+			.carousel-icon {
+				color: $carousel-control-icon-color-hover;
+			}
+
+		}
+
+		&.left {
+			left: 10px;
+			border-top-left-radius: $carousel-body-border-radius;
+			border-bottom-left-radius: $carousel-body-border-radius;
+		}
+
+		&.right {
+			right: 10px;
+			border-top-right-radius: $carousel-body-border-radius;
+			border-bottom-right-radius: $carousel-body-border-radius;
+		}
+	}
+
+	.carousel-loader {
+
+		&.hide {
+			display: none;
+		}
+
+		i {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			color: $carousel-loader-color;
+			font-size: 18px;
+			vertical-align: middle;
+		}
+
+		.fa-spin {
+			-webkit-animation: fa-spin 2s infinite linear;
+			-moz-animation: fa-spin 2s infinite linear;
+			-o-animation: fa-spin 2s infinite linear;
+			animation: fa-spin 2s infinite linear;
+		}
+	}
+
+
+}

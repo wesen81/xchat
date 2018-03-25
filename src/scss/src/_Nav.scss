@@ -1,0 +1,87 @@
+/// @member Docler.Tab
+//
+// Navigation is top of application
+
+$nav-button-border-color: rgba(51,51,51,0.3) !default;
+
+.nav {
+	@include display-flex();
+	@include flex-direction(row);
+
+	.nav-button {
+		@include flex(1);
+		text-align: center;
+		border-bottom: 1px solid $nav-button-border-color;
+		border-top: 3px solid $nav-button-border-color;
+
+		&:not(:last-child) {
+			border-right: 1px solid $nav-button-border-color;
+		}
+
+		.nav-wrapper {
+			padding: 1.5rem;
+			@include display-flex();
+			@include flex-direction(column);
+		}
+
+		.nav-icon,
+		.nav-label {
+			@include flex(1);
+			color: white;
+			opacity: .5;
+		}
+
+		.nav-icon {
+			font-size: 2rem;
+		}
+
+		.nav-label {
+			font-size: 1rem;
+			font-weight: bold;
+			@include flex(1);
+		}
+
+
+		&.active {
+			background: rgba(0,0,0,0.1);
+
+			.nav-icon,
+			.nav-label {
+				color: white;
+				opacity: 1;
+			}
+		}
+
+		&:hover {
+			background: #d7183c;
+			color: white;
+
+			.nav-icon,
+			.nav-label {
+				color: white;
+				opacity: 1;
+			}
+		}
+
+		&.blinked {
+			-webkit-animation: blink 2s infinite;  /* Safari 4+ */
+			-moz-animation: blink 2s infinite;  /* Fx 5+ */
+			-o-animation: blink 2s infinite;  /* Opera 12+ */
+			animation: blink 2s infinite;  /* IE 10+, Fx 29+ */
+		}
+
+
+		@include xs {
+			.nav-wrapper {padding : 1rem;}
+			.nav-icon {font-size: 3rem;}
+			.nav-label {display: none;}
+		}
+
+		@include sm {
+			.nav-wrapper {padding : 1rem;}
+			.nav-icon {font-size: 3rem;}
+			.nav-label {display: none;}
+		}
+
+	}
+}

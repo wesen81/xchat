@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>DOCLER TEST APPLICATION</title>
+
+	<!--Javascript-->
+	<script src="http://185.13.90.140:8081/socket.io/socket.io.js"></script>
+	<script src="resources/docler.min.js"></script>
+
+	<!--Style -->
+	<link rel="stylesheet" type="text/css" href="resources/docler.css"/>
+
+</head>
+<body>
+	<div id="application">
+		<nav class="nav">
+
+			<!-- Chat button -->
+			<div class="nav-button active" data-board="chat">
+				<a href="#Chat" class="nav-wrapper">
+					<i class="nav-icon icon fa-comment"></i>
+					<div class="nav-label">Chat</div>
+				</a>
+			</div>
+
+			<!-- Carousel button -->
+			<div class="nav-button"
+				 data-board="carousel">
+				<a href="#Carousel" class="nav-wrapper">
+					<i class="nav-icon icon fa-image"></i>
+					<div class="nav-label">Photos</div>
+				</a>
+			</div>
+
+			<!-- Settings button -->
+			<div class="nav-button"
+				 data-board="settings"
+				 data-bind="click: setActiveTab.bind($root, 2)">
+				<a href="#Settings" class="nav-wrapper">
+					<i class="nav-icon icon fa-cog"></i>
+					<div class="nav-label">Settings</div>
+				</a>
+			</div>
+		</nav>
+
+		<div class="board">
+
+			<!-- CHAT BOARD START -->
+			<div id="chat" class="page active">
+				<div class="chat-area flow">
+					<!-- MESSAGES ARE HERE -->
+				</div>
+				<div class="footer">
+					<input class="textfield chat-message"
+					       spellcheck="false"
+					       autocomplete="false"
+					       placeholder="Type here to chat"
+					       type="text"
+					       name="message">
+					<button class="btn chat-button">
+						<i class="fa-send"></i>
+						Send
+					</button>
+				</div>
+			</div>
+			<!-- CHAT BOARD END -->
+
+			<!-- CAROUSEL BOARD START -->
+			<div id="carousel" class="page">
+				<div class="carousel-body">
+					<!-- IMAGE ITEMS ARE HERE -->
+				</div>
+				<div class="carousel-control left">
+					<i class="carousel-icon fa-angle-left"></i>
+				</div>
+				<div class="carousel-control right">
+					<i class="carousel-icon fa-angle-right"></i>
+				</div>
+				<div class="carousel-loader hide">
+					<i class="fa-circle-o-notch fa-spin"></i>
+				</div>
+			</div>
+			<!-- CAROUSEL BOARD END -->
+
+			<!-- SETTINGS BOARD START -->
+			<div id="settings" class="page">
+				<div class="panel collapse">
+					<div class="panel-header">
+						Photo settings
+					</div>
+					<div class="panel-body">
+						<div class="panel-wrapper">
+							<div class="slider" data-slider="width" data-label="Image width"></div>
+							<div class="slider" data-slider="height" data-label="Image height"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel">
+					<div class="panel-header">
+						Chat settings
+					</div>
+					<div class="panel-body">
+						<div class="panel-wrapper">
+							<input class="textfield"
+									type="text"
+									placeholder="Enter username"
+									value="Guest"
+									name="username"
+									spellcheck="false">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SETTINGS BOARD END -->
+		</div>
+
+
+	</div>
+</body>
+</html>
