@@ -29,6 +29,8 @@ html {
 
 body {
 	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 	@include display-flex();
 	@include background(image-url("bg-pattern.svg"),
 			radial-gradient(10% 0, farthest-side ellipse, #414e60 20%, #94a3b1));
