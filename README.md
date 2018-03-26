@@ -1,4 +1,4 @@
-#Docler Chat Application
+<h1>Docler Chat Application</h1>
 
 ## Quick start
 
@@ -25,8 +25,4 @@ dist/
 └── index.html
 ```
 
-##Chat
-
-
-##Author
-Nagy Viktor
+<code>nv</code>
